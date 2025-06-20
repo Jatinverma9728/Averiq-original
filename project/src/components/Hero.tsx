@@ -99,19 +99,7 @@ const Hero = () => {
       {/* Place the gradient background first */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-black to-gray-900 z-0"></div>
 
-      {/* Video Background */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover z-0"
-        autoPlay
-        loop
-        muted
-        playsInline
-        // poster="fallback-image.jpg" // Optional: fallback image
-      >
-        <source src="your-video.mp4" type="video/mp4" />
-        {/* Add more <source> tags for other formats if needed */}
-        Your browser does not support the video tag.
-      </video>
+     
 
       {/* SVG Blobs and Particles */}
       <AnimatedBackground />

@@ -51,7 +51,7 @@ const Header = () => {
         transition={{ type: "spring", stiffness: 400, damping: 40 }}
         className={`fixed top-0 w-full z-50 transition-all duration-700 ${
           isScrolled 
-            ? 'bg-black/90 backdrop-blur-2xl' // removed border-b border-white/[0.06]
+            ? 'bg-black/20 backdrop-blur-xl' // removed border-b border-white/[0.06]
             : 'bg-transparent'
         }`}
       >
@@ -77,7 +77,7 @@ const Header = () => {
 
             {/* Desktop Navigation with Creative Hover */}
             <nav className="hidden lg:flex items-center">
-              <div className="flex items-center space-x-1 bg-white/[0.03] backdrop-blur-sm rounded-full p-2 border border-white/[0.06]">
+              <div className="flex items-center space-x-1 bg-black/20 backdrop-blur-lg rounded-full p-2 border border-white/[0.06]">
                 {navItems.map((item, index) => (
                   <motion.div
                     key={item.label}
@@ -114,7 +114,7 @@ const Header = () => {
                         initial={{ opacity: 0, y: 10, scale: 0.9 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.9 }}
-                        className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 bg-black/90 backdrop-blur-xl text-white/80 text-xs rounded-lg border border-white/[0.08] whitespace-nowrap"
+                        className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 bg-black/50 backdrop-blur-md text-white/80 text-xs rounded-lg border border-white/[0.08] whitespace-nowrap"
                       >
                         {item.description}
                         <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-black/90 rotate-45 border-l border-t border-white/[0.08]"></div>
@@ -162,7 +162,7 @@ const Header = () => {
             height: isMobileMenuOpen ? 'auto' : 0 
           }}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
-          className="lg:hidden bg-black/95 backdrop-blur-2xl border-t border-white/[0.06] overflow-hidden"
+          className="lg:hidden bg-black/55 backdrop-blur-md border-t border-white/[0.06] overflow-hidden"
         >
           <div className="px-6 py-8">
             <div className="space-y-1 mb-8">
