@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Testimonials = () => {
   const [ref, inView] = useInView({
@@ -11,35 +11,43 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: 'Sarah Chen',
-      company: 'Nexus Ventures',
-      role: 'CEO',
-      content: 'Averiq transformed our ambitious vision into a platform that exceeded every expectation. Their attention to detail and strategic thinking is unparalleled.',
-      avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg',
+      name: "Sarah Chen",
+      company: "Nexus Ventures",
+      role: "CEO",
+      content:
+        "Averiq transformed our ambitious vision into a platform that exceeded every expectation. Their attention to detail and strategic thinking is unparalleled.",
+      avatar:
+        "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg",
     },
     {
       id: 2,
-      name: 'Michael Rodriguez',
-      company: 'Digital Dynamics',
-      role: 'CTO',
-      content: 'Working with Averiq was transformative. They delivered a solution that drove 300% growth while maintaining the elegance we demanded.',
-      avatar: 'https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg',
+      name: "Michael Rodriguez",
+      company: "Digital Dynamics",
+      role: "CTO",
+      content:
+        "Working with Averiq was transformative. They delivered a solution that drove 300% growth while maintaining the elegance we demanded.",
+      avatar:
+        "https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg",
     },
     {
       id: 3,
-      name: 'Emily Thompson',
-      company: 'HealthTech Solutions',
-      role: 'Founder',
-      content: 'The sophistication and thoughtfulness of their approach revolutionized how our patients interact with our services.',
-      avatar: 'https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg',
+      name: "Emily Thompson",
+      company: "HealthTech Solutions",
+      role: "Founder",
+      content:
+        "The sophistication and thoughtfulness of their approach revolutionized how our patients interact with our services.",
+      avatar:
+        "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg",
     },
     {
       id: 4,
-      name: 'David Kim',
-      company: 'Commerce Plus',
-      role: 'Director',
-      content: 'Their platform increased our conversion rates by 150%. The team delivers excellence with remarkable consistency.',
-      avatar: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg',
+      name: "David Kim",
+      company: "Commerce Plus",
+      role: "Director",
+      content:
+        "Their platform increased our conversion rates by 150%. The team delivers excellence with remarkable consistency.",
+      avatar:
+        "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg",
     },
   ];
 
@@ -60,7 +68,7 @@ const Testimonials = () => {
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: 'easeOut',
+        ease: "easeOut",
       },
     },
   };

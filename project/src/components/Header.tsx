@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import React, { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import { InteractiveHoverButton } from "./magicui/interactive-hover-button";
 
 const Header = () => {
@@ -29,36 +29,36 @@ const Header = () => {
       }
       lastScrollY.current = window.scrollY;
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { label: 'Work', href: '#portfolio', description: 'Selected Projects' },
-    { label: 'Services', href: '#services', description: 'What We Do' },
-    { label: 'Process', href: '#process', description: 'How We Work' },
-    { label: 'About', href: '#about', description: 'Our Story' },
-    { label: 'Contact', href: '#contact', description: 'Let\'s Talk' }
+    { label: "Work", href: "#portfolio", description: "Selected Projects" },
+    { label: "Services", href: "#services", description: "What We Do" },
+    { label: "Process", href: "#process", description: "How We Work" },
+    { label: "About", href: "#about", description: "Our Story" },
+    { label: "Contact", href: "#contact", description: "Let's Talk" },
   ];
 
   return (
     <>
       <motion.header
         initial={{ y: -100 }}
-        animate={{ 
-          y: showHeader ? 0 : -120 // Slide up when hidden, down when shown
+        animate={{
+          y: showHeader ? 0 : -120, // Slide up when hidden, down when shown
         }}
         transition={{ type: "spring", stiffness: 400, damping: 40 }}
         className={`fixed top-0 w-full z-50 transition-all duration-700 ${
-          isScrolled 
-            ? 'bg-black/20 backdrop-blur-xl' // removed border-b border-white/[0.06]
-            : 'bg-transparent'
+          isScrolled
+            ? "bg-black/20 backdrop-blur-xl" // removed border-b border-white/[0.06]
+            : "bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-24">
             {/* Sophisticated Logo */}
-            <motion.div 
+            <motion.div
               className="flex items-center space-x-4 group cursor-pointer"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
@@ -70,8 +70,12 @@ const Header = () => {
                 <div className="absolute inset-0 w-10 h-10 bg-white/20 rounded-xl blur-md group-hover:blur-lg transition-all duration-500"></div>
               </div>
               <div className="flex flex-col">
-                <span className="text-2xl font-light text-white tracking-[0.02em] leading-none">Averiq</span>
-                <span className="text-xs text-white/40 font-light tracking-widest uppercase">Software Agency</span>
+                <span className="text-2xl font-light text-white tracking-[0.02em] leading-none">
+                  Averiq
+                </span>
+                <span className="text-xs text-white/40 font-light tracking-widest uppercase">
+                  Software Agency
+                </span>
               </div>
             </motion.div>
 
@@ -94,7 +98,7 @@ const Header = () => {
                       transition={{ delay: index * 0.1 }}
                     >
                       {item.label}
-                      
+
                       {/* Elegant hover background */}
                       {hoveredItem === index && (
                         <motion.div
@@ -107,7 +111,7 @@ const Header = () => {
                         />
                       )}
                     </motion.a>
-                    
+
                     {/* Tooltip on hover */}
                     {hoveredItem === index && (
                       <motion.div
@@ -127,8 +131,7 @@ const Header = () => {
 
             {/* Elegant CTA Button */}
             <div className="hidden lg:flex items-center space-x-4">
-            <InteractiveHoverButton>Start Project</InteractiveHoverButton>
-
+              <InteractiveHoverButton>Start Project</InteractiveHoverButton>
             </div>
 
             {/* Creative Mobile Menu Button */}
@@ -138,7 +141,11 @@ const Header = () => {
             >
               <div className="relative">
                 <motion.div
-                  animate={isMobileMenuOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: -4 }}
+                  animate={
+                    isMobileMenuOpen
+                      ? { rotate: 45, y: 0 }
+                      : { rotate: 0, y: -4 }
+                  }
                   className="w-6 h-0.5 bg-white rounded-full"
                 />
                 <motion.div
@@ -146,7 +153,11 @@ const Header = () => {
                   className="w-6 h-0.5 bg-white rounded-full mt-1"
                 />
                 <motion.div
-                  animate={isMobileMenuOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: 4 }}
+                  animate={
+                    isMobileMenuOpen
+                      ? { rotate: -45, y: 0 }
+                      : { rotate: 0, y: 4 }
+                  }
                   className="w-6 h-0.5 bg-white rounded-full mt-1"
                 />
               </div>
@@ -157,11 +168,11 @@ const Header = () => {
         {/* Elegant Mobile Menu */}
         <motion.div
           initial={{ opacity: 0, height: 0 }}
-          animate={{ 
-            opacity: isMobileMenuOpen ? 1 : 0, 
-            height: isMobileMenuOpen ? 'auto' : 0 
+          animate={{
+            opacity: isMobileMenuOpen ? 1 : 0,
+            height: isMobileMenuOpen ? "auto" : 0,
           }}
-          transition={{ duration: 0.3, ease: 'easeInOut' }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
           className="lg:hidden bg-black/55 backdrop-blur-md border-t border-white/[0.06] overflow-hidden"
         >
           <div className="px-6 py-8">
@@ -178,13 +189,15 @@ const Header = () => {
                 >
                   <div>
                     <div className="font-light text-lg">{item.label}</div>
-                    <div className="text-white/40 text-sm font-light">{item.description}</div>
+                    <div className="text-white/40 text-sm font-light">
+                      {item.description}
+                    </div>
                   </div>
                   <ArrowUpRight className="w-5 h-5 text-white/30" />
                 </motion.a>
               ))}
             </div>
-            
+
             <motion.button
               className="w-full px-8 py-4 bg-white text-black rounded-full font-medium text-lg"
               initial={{ opacity: 0, y: 20 }}
@@ -205,8 +218,7 @@ const Header = () => {
           exit={{ opacity: 0 }}
           className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 lg:hidden"
           onClick={() => setIsMobileMenuOpen(false)}
-        >
-        </motion.div>
+        ></motion.div>
       )}
     </>
   );

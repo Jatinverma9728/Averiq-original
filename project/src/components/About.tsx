@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const About = () => {
   const [ref, inView] = useInView({
@@ -9,10 +9,10 @@ const About = () => {
   });
 
   const stats = [
-    { number: 500, label: 'Projects Delivered', suffix: '+' },
-    { number: 40, label: 'Team Members', suffix: '+' },
-    { number: 300, label: 'Happy Clients', suffix: '+' },
-    { number: 5, label: 'Years Experience', suffix: '' },
+    { number: 500, label: "Projects Delivered", suffix: "+" },
+    { number: 40, label: "Team Members", suffix: "+" },
+    { number: 300, label: "Happy Clients", suffix: "+" },
+    { number: 5, label: "Years Experience", suffix: "" },
   ];
 
   const containerVariants = {
@@ -32,7 +32,7 @@ const About = () => {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: 'easeOut',
+        ease: "easeOut",
       },
     },
   };
@@ -135,7 +135,7 @@ const CountUp = ({ end, duration = 2, delay = 0 }) => {
     const timer = setTimeout(() => {
       const increment = end / (duration * 60);
       let current = 0;
-      
+
       const counter = setInterval(() => {
         current += increment;
         if (current >= end) {

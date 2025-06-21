@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Play, X } from 'lucide-react';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Play, X } from "lucide-react";
 import { SparklesText } from "./magicui/sparkles-text";
 import { MorphingText } from "./magicui/morphing-text";
 // import { RetroGrid } from "./magicui/retro-grid";
 import { InteractiveGridPattern } from "./magicui/interactive-grid-pattern";
-
 
 const AnimatedBackground = () => (
   <div className="absolute inset-0 pointer-events-none z-0">
@@ -15,7 +14,7 @@ const AnimatedBackground = () => (
       animate={{ opacity: 0.5, scale: 1 }}
       transition={{ duration: 2 }}
       className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw]"
-      style={{ filter: 'blur(60px)' }}
+      style={{ filter: "blur(60px)" }}
     >
       <defs>
         <radialGradient id="grad1" cx="50%" cy="50%" r="50%">
@@ -30,7 +29,7 @@ const AnimatedBackground = () => (
       animate={{ opacity: 0.4, scale: 1 }}
       transition={{ duration: 2, delay: 0.5 }}
       className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw]"
-      style={{ filter: 'blur(80px)' }}
+      style={{ filter: "blur(80px)" }}
     >
       <defs>
         <radialGradient id="grad2" cx="50%" cy="50%" r="50%">
@@ -41,10 +40,9 @@ const AnimatedBackground = () => (
       <ellipse cx="50%" cy="50%" rx="40%" ry="35%" fill="url(#grad2)" />
     </motion.svg>
     {/* Minimal Grid Overlay */}
-  
-      <InteractiveGridPattern>  </InteractiveGridPattern>
-    </div>
- 
+
+    <InteractiveGridPattern> </InteractiveGridPattern>
+  </div>
 );
 
 const Modal = ({ open, onClose }: { open: boolean; onClose: () => void }) => (
@@ -99,12 +97,8 @@ const Hero = () => {
       {/* Place the gradient background first */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-black to-gray-900 z-0"></div>
 
-     
-
       {/* SVG Blobs and Particles */}
       <AnimatedBackground />
-
-     
 
       {/* Subtle Glow Effects */}
       <div className="absolute inset-0 z-10">
@@ -141,7 +135,7 @@ const Hero = () => {
             <span>That Moves</span>
           </div>
           <span className="font-extralight text-white/60">
-            <MorphingText texts={["Website", "App","SaaS","SEO","UI/UX"]} />
+            <MorphingText texts={["Website", "App", "SaaS", "SEO", "UI/UX"]} />
           </span>
         </motion.h1>
 

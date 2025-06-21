@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const WhyChooseUs = () => {
   const [ref, inView] = useInView({
@@ -10,20 +10,24 @@ const WhyChooseUs = () => {
 
   const features = [
     {
-      title: 'Transparent Partnership',
-      description: 'Clear communication, honest timelines, and pricing that respects your investment in excellence.',
+      title: "Transparent Partnership",
+      description:
+        "Clear communication, honest timelines, and pricing that respects your investment in excellence.",
     },
     {
-      title: 'Performance Obsessed',
-      description: 'Every solution is architected for speed, scalability, and the demands of tomorrow.',
+      title: "Performance Obsessed",
+      description:
+        "Every solution is architected for speed, scalability, and the demands of tomorrow.",
     },
     {
-      title: 'Lifetime Commitment',
-      description: 'Our relationship extends beyond launch with ongoing support and strategic evolution.',
+      title: "Lifetime Commitment",
+      description:
+        "Our relationship extends beyond launch with ongoing support and strategic evolution.",
     },
     {
-      title: 'Strategic Growth',
-      description: 'Solutions designed not just for today, but to scale with your ambitions and market evolution.',
+      title: "Strategic Growth",
+      description:
+        "Solutions designed not just for today, but to scale with your ambitions and market evolution.",
     },
   ];
 
@@ -44,7 +48,7 @@ const WhyChooseUs = () => {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: 'easeOut',
+        ease: "easeOut",
       },
     },
   };
