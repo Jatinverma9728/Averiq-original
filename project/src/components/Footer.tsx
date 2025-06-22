@@ -22,16 +22,32 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Twitter, href: "https://x.com/Averiq196428", label: "Twitter" },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/jatinverma9728/",
+      label: "LinkedIn",
+    },
+    {
+      icon: Github,
+      href: "https://github.com/Jatinverma9728",
+      label: "GitHub",
+    },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/averiq.in?igsh=MTB3d3JudXpqamhpaA==",
+      label: "Instagram",
+    },
   ];
 
   const contactInfo = [
-    { icon: Mail, label: 'hello@averiq.com', href: 'mailto:hello@averiq.com' },
-    { icon: Phone, label: '+1 (555) 123-4567', href: 'tel:+15551234567' },
-    { icon: MapPin, label: 'San Francisco, CA', href: '#' },
+    {
+      icon: Mail,
+      label: "hello.averiq@gmail.com",
+      href: "mailto:hello.averiq@gmail.com",
+    },
+    { icon: Phone, label: "+91 97283 49291", href: "tel:9728349291" },
+    { icon: MapPin, label: "Bharat Nagar Bhiwani, Haryana, IN", href: "#" },
   ];
 
   return (
@@ -126,9 +142,11 @@ const Footer = () => {
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-white to-gray-100 group-hover:from-gray-50 group-hover:to-white transition-all duration-300"></div>
               </motion.button> */}
-              <InteractiveHoverButton className="w-fit ">
-                Let's Work Together
-              </InteractiveHoverButton>
+              <a href="#contact">
+                <InteractiveHoverButton className="w-fit">
+                  Let's Work Together
+                </InteractiveHoverButton>
+              </a>
             </div>
           </div>
 

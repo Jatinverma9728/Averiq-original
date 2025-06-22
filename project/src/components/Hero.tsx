@@ -162,7 +162,7 @@ const Hero = () => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <span>Start Your Project</span>
+            <a href="#contact">Start Your Project</a>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </motion.button>
 

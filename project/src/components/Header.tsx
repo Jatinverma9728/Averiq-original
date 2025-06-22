@@ -134,7 +134,9 @@ const Header = () => {
 
             {/* Elegant CTA Button */}
             <div className="hidden lg:flex items-center space-x-4">
-              <InteractiveHoverButton>Start Project</InteractiveHoverButton>
+              <a href="#contact">
+                <InteractiveHoverButton>Start Project</InteractiveHoverButton>
+              </a>
             </div>
 
             {/* Creative Mobile Menu Button */}

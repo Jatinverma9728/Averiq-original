@@ -61,13 +61,13 @@ const CTA = () => {
                 <p className="text-sm font-light tracking-wide uppercase mb-1 text-white/40">
                   Email
                 </p>
-                <p className="text-white/80">hello@averiq.com</p>
+                <p className="text-white/80">hello.averiq@gmail.com</p>
               </div>
               <div>
                 <p className="text-sm font-light tracking-wide uppercase mb-1 text-white/40">
                   Phone
                 </p>
-                <p className="text-white/80">+1 (555) 123-4567</p>
+                <p className="text-white/80">+91 97283 49291</p>
               </div>
               <div>
                 <p className="text-sm font-light tracking-wide uppercase mb-1 text-white/40">
