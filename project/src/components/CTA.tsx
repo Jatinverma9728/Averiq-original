@@ -97,7 +97,7 @@ const CTA = () => {
                       type="text"
                       name="name"
                       id="name"
-                      className="peer w-full bg-transparent border-b border-white/20 pt-6 pb-2 focus:outline-none text-base text-white placeholder-transparent transition-all rounded-md"
+                      className="peer w-full bg-transparent border-b border-white/20 pt-6 pb-2 focus:outline-none text-base text-white placeholder-transparent transition-all "
                       placeholder="Full Name"
                       required
                     />
@@ -124,7 +124,7 @@ const CTA = () => {
                         type="email"
                         name="email"
                         id="email"
-                        className="peer w-full bg-transparent border-b border-white/20 pt-6 pb-2 focus:outline-none text-base text-white placeholder-transparent transition-all rounded-md"
+                        className="peer w-full bg-transparent border-b border-white/20 pt-6 pb-2 focus:outline-none text-base text-white placeholder-transparent transition-all "
                         placeholder="Email"
                         required
                       />
@@ -149,7 +149,7 @@ const CTA = () => {
                         type="tel"
                         name="phone"
                         id="phone"
-                        className="peer w-full bg-transparent border-b border-white/20 pt-6 pb-2 focus:outline-none text-base text-white placeholder-transparent transition-all rounded-md"
+                        className="peer w-full bg-transparent border-b border-white/20 pt-6 pb-2 focus:outline-none text-base text-white placeholder-transparent transition-all "
                         placeholder="Phone"
                         required
                       />
@@ -176,7 +176,7 @@ const CTA = () => {
                       name="message"
                       id="message"
                       rows={4}
-                      className="peer w-full bg-transparent border-b border-white/20 pt-6 pb-2 focus:outline-none text-base text-white placeholder-transparent transition-all resize-none rounded-md"
+                      className="peer w-full bg-transparent border-b border-white/20 pt-6 pb-2 focus:outline-none text-base text-white placeholder-transparent transition-all resize-none "
                       placeholder="Message"
                       required
                     />
