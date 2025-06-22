@@ -64,19 +64,22 @@ const Header = () => {
               transition={{ duration: 0.3 }}
             >
               <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-br from-white to-white/80 rounded-xl flex items-center justify-center shadow-lg">
-                  <div className="w-4 h-4 bg-black rounded-md transform rotate-45 group-hover:rotate-90 transition-transform duration-500"></div>
-                </div>
-                <div className="absolute inset-0 w-10 h-10 bg-white/20 rounded-xl blur-md group-hover:blur-lg transition-all duration-500"></div>
+                <img
+                  src="/Averiq-Branding-kit/logo+branding-white.png"
+                  alt="Averiq Logo"
+                  className="  h-12 rounded-xl shadow-lg object-contain"
+                />
+                {/* Optionally keep the glow effect */}
+                {/* <div className="absolute inset-0 w-10 h-10 bg-white/20 rounded-xl blur-md group-hover:blur-lg transition-all duration-500"></div> */}
               </div>
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <span className="text-2xl font-light text-white tracking-[0.02em] leading-none">
                   Averiq
                 </span>
                 <span className="text-xs text-white/40 font-light tracking-widest uppercase">
                   Software Agency
                 </span>
-              </div>
+              </div> */}
             </motion.div>
 
             {/* Desktop Navigation with Creative Hover */}

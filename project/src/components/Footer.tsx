@@ -58,19 +58,22 @@ const Footer = () => {
                 transition={{ duration: 0.3 }}
               >
                 <div className="relative">
-                  <div className="w-12 h-12 bg-gradient-to-br from-white to-white/80 rounded-xl flex items-center justify-center shadow-lg">
-                    <div className="w-5 h-5 bg-black rounded-md transform rotate-45 group-hover:rotate-90 transition-transform duration-500"></div>
-                  </div>
-                  <div className="absolute inset-0 w-12 h-12 bg-white/20 rounded-xl blur-md group-hover:blur-lg transition-all duration-500"></div>
+                  <img
+                    src="/Averiq-Branding-kit/logo+branding-white.png"
+                    alt="Averiq Logo"
+                    className="w-52 rounded-xl shadow-lg object-contain "
+                  />
+                  {/* Optionally keep the glow effect */}
+                  {/* <div className="absolute inset-0 w-12 h-12 bg-white/20 rounded-xl blur-md group-hover:blur-lg transition-all duration-500"></div> */}
                 </div>
-                <div className="flex flex-col">
+                {/* <div className="flex flex-col">
                   <span className="text-3xl font-light text-white tracking-[0.02em] leading-none">
                     Averiq
                   </span>
                   <span className="text-sm text-white/40 font-light tracking-widest uppercase">
                     Software Agency
                   </span>
-                </div>
+                </div> */}
               </motion.div>
 
               <p className="text-white/60 mb-8 leading-relaxed font-light max-w-md text-lg">
