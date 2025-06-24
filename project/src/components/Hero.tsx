@@ -112,10 +112,10 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="inline-flex items-center space-x-2 bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-full px-6 py-3 mb-12"
+          className="inline-flex items-center space-x-2 bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-full px-4 py-2 sm:px-6 sm:py-3 mb-8 sm:mb-12"
         >
-          <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-          <span className="text-white/70 text-sm font-medium tracking-wide">
+          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full animate-pulse"></div>
+          <span className="text-xs sm:text-sm text-white/70 font-medium tracking-wide">
             PREMIUM SOFTWARE SOLUTIONS
           </span>
         </motion.div>
@@ -125,16 +125,16 @@ const Hero = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="text-5xl sm:text-7xl lg:text-8xl font-light text-white mb-8 leading-[0.9] tracking-tight"
+          className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-white mb-8 leading-[1.05] tracking-tight"
         >
-          <div className="flex text-5xl sm:text-7xl lg:text-8xl font-light text-white  leading-[0.9] tracking-tight">
-            <span>We Build</span>
-            <SparklesText className="text-5xl sm:text-7xl lg:text-8xl font-light text-white mb- leading-[0.9] tracking-tight ml-2 mr-2">
+          <div className="flex flex-col items-center justify-center gap-2 md:flex-row md:gap-3 flex-wrap w-full">
+            <span className="block min-w-0 break-words">We Build</span>
+            <SparklesText className="block md:inline min-w-0 break-words text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-white mx-0 md:mx-2">
               Digital
             </SparklesText>
-            <span>That Moves</span>
+            <span className="block min-w-0 break-words">That Moves</span>
           </div>
-          <span className="font-extralight text-white/60">
+          <span className="font-extralight text-white/60 block mt-2 text-2xl xs:text-3xl sm:text-4xl">
             <MorphingText texts={["Website", "App", "SaaS", "SEO", "UI/UX"]} />
           </span>
         </motion.h1>
@@ -144,7 +144,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-xl text-white/50 mb-16 max-w-2xl mx-auto leading-relaxed font-light"
+          className="text-2xl text-white/50 mb-16 max-w-2xl mx-auto leading-relaxed font-light"
         >
           Transforming ambitious visions into sophisticated software solutions
           that define the future of business.
