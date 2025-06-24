@@ -132,22 +132,24 @@ const Portfolio = () => {
           </p>
 
           {/* Minimal Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-2">
-            {filters.map((filter) => (
-              <motion.button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={`px-6 py-2 rounded-full font-light text-sm tracking-wide transition-all duration-500 ${
-                  activeFilter === filter
-                    ? "bg-white text-black"
-                    : "bg-white/[0.05] text-white/60 hover:bg-white/[0.1] hover:text-white/80"
-                }`}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {filter}
-              </motion.button>
-            ))}
+          <div className="w-full overflow-x-auto mb-6 scrollbar-hide">
+            <div className="inline-flex whitespace-nowrap gap-2 px-1">
+              {filters.map((filter) => (
+                <motion.button
+                  key={filter}
+                  onClick={() => setActiveFilter(filter)}
+                  className={`px-6 py-2 rounded-full font-light text-sm tracking-wide transition-all duration-500 ${
+                    activeFilter === filter
+                      ? "bg-white text-black"
+                      : "bg-white/[0.05] text-white/60 hover:bg-white/[0.1] hover:text-white/80"
+                  }`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {filter}
+                </motion.button>
+              ))}
+            </div>
           </div>
         </motion.div>
 
