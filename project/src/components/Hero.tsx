@@ -39,7 +39,6 @@ const AnimatedBackground = () => (
       </defs>
       <ellipse cx="50%" cy="50%" rx="40%" ry="35%" fill="url(#grad2)" />
     </motion.svg>
-    {/* Minimal Grid Overlay */}
 
     <InteractiveGridPattern> </InteractiveGridPattern>
   </div>
@@ -158,7 +157,7 @@ const Hero = () => {
           className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8"
         >
           <motion.button
-            className="group px-8 py-4 bg-white text-black rounded-full font-medium text-lg flex items-center space-x-3 hover:bg-white/90 transition-all duration-500"
+            className="group px-4 py-2 bg-white text-black rounded-full font-medium text-md flex items-center space-x-3 hover:bg-white/90 transition-all duration-500"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -167,7 +166,7 @@ const Hero = () => {
           </motion.button>
 
           <motion.button
-            className="group px-8 py-4 border border-white/20 text-white rounded-full font-medium text-lg flex items-center space-x-3 hover:border-white/40 hover:bg-white/[0.02] transition-all duration-500"
+            className="group px-4 py-2 border border-white/20 text-white rounded-full font-medium text-md flex items-center space-x-3 hover:border-white/40 hover:bg-white/[0.02] transition-all duration-500"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => setModalOpen(true)}
@@ -178,7 +177,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Elegant Scroll Indicator */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.2 }}
@@ -188,7 +187,7 @@ const Hero = () => {
             <div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
             <div className="w-1 h-1 bg-white/40 rounded-full animate-bounce"></div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Animated Modal */}

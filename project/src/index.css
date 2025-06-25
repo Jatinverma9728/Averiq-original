@@ -58,7 +58,9 @@
   }
   .theme {
     --animate-shine: shine var(--duration) infinite linear;
-    --animate-grid: grid 15s linear infinite}
+    --animate-grid: grid 15s linear infinite;
+    --animate-gradient: gradient 8s linear infinite;
+    --animate-shiny-text: shiny-text 8s infinite}
 }
 
 @layer base {
@@ -123,8 +125,25 @@
     transform: translateY(0);
     }
   }
+  @keyframes gradient {
+  to {
+    background-position: var(--bg-size, 300%) 0;
+    }
+  }
+  @keyframes gradient {
+  to {
+    background-position: var(--bg-size, 300%) 0;
+    }
+  }
+  @keyframes shiny-text {
+  0%, 90%, 100% {
+    background-position: calc(-100% - var(--shiny-width)) 0;
+    }
+  30%, 60% {
+    background-position: calc(100% + var(--shiny-width)) 0;
+    }
+  }
 }
-
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar { 
@@ -140,8 +159,6 @@
   background: linear-gradient(to bottom, #ffffff, #ffffff);
   border-radius: 3px;
 }
-
-
 
 /* Smooth Scrolling */
 html {
