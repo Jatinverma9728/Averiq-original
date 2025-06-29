@@ -2,15 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { VelocityScroll } from "./magicui/scroll-based-velocity";
+import { GlowingEffect } from "./magicui/glowing-effect";
+import { cn } from "../lib/utils";
 
-import { 
-  Globe, 
-  Smartphone, 
-  Database, 
-  Palette, 
-  Layers, 
-  Box 
-} from 'lucide-react';
+// Using standard img tags for icons
 
 const Services = () => {
   const [ref, inView] = useInView({
@@ -18,61 +13,15 @@ const Services = () => {
     threshold: 0.1,
   });
 
-  const services = [
-    {
-      icon: Globe,
-      title: 'Web Development',
-      description: 'Sophisticated web applications built with modern architecture and exceptional performance.',
-    },
-    {
-      icon: Smartphone,
-      title: 'Mobile Applications',
-      description: 'Native and cross-platform solutions that deliver seamless user experiences.',
-    },
-    {
-      icon: Database,
-      title: 'Enterprise Systems',
-      description: 'Custom CRM and ERP solutions designed to optimize your business operations.',
-    },
-    {
-      icon: Palette,
-      title: 'SaaS Platforms',
-      description: 'Scalable software-as-a-service solutions from concept to market deployment.',
-    },
-    {
-      icon: Layers,
-      title: 'Digital Experiences',
-      description: 'Intuitive interfaces and motion design that captivate and engage users.',
-    },
-    {
-      icon: Box,
-      title: 'Innovation Labs',
-      description: 'Cutting-edge 3D experiences and emerging technology implementations.',
-    },
-  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: 'easeOut',
-      },
-    },
-  };
-
+  
   return (
     <section
       id="services"
@@ -106,39 +55,104 @@ const Services = () => {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              variants={itemVariants}
-              className="group relative p-8 bg-white/[0.02] border border-white/[0.05] rounded-2xl hover:bg-white/[0.04] hover:border-white/[0.1] transition-all duration-700"
-            >
-              {/* Icon */}
-              <div className="w-12 h-12 mb-8 text-white/60 group-hover:text-white transition-colors duration-500">
-                <service.icon className="w-full h-full" strokeWidth={1} />
-              </div>
-
-              {/* Content */}
-              <div>
-                <h3 className="text-2xl font-light text-white mb-4 tracking-wide">
-                  {service.title}
-                </h3>
-                <p className="text-white/40 leading-relaxed font-light">
-                  {service.description}
-                </p>
-              </div>
-
-              {/* Subtle hover line */}
-              <div className="absolute bottom-0 left-8 right-8 h-[1px] bg-white/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
-            </motion.div>
-          ))}
+          <ul className=" grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
+            <GridItem
+              area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
+              icon={
+                <div className="relative h-20 w-20">
+                  <img src="/icons/rocket.png" alt="Web Development" className="h-20 w-20 object-contain" />
+                </div>
+              }
+              title="Web Development"
+              description="Sophisticated web applications built with modern architecture and exceptional performance."
+            />
+            <GridItem
+              area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
+              icon={
+                <div className="relative h-20 w-20">
+                  <img src="/icons/star.png" alt="Mobile Applications" className="h-20 w-20 object-contain" />
+                </div>
+              }
+              title="Mobile Applications"
+              description="Native and cross-platform solutions that deliver seamless user experiences."
+            />
+            <GridItem
+              area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]"
+              icon={
+                <div className="relative h-20 w-20">
+                  <img src="/icons/folder.png" alt="Enterprise Systems" className="h-20 w-20 object-contain" />
+                </div>
+              }
+              title="Enterprise Systems"
+              description="Custom CRM and ERP solutions designed to optimize your business operations."
+            />
+            <GridItem
+              area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
+              icon={
+                <div className="relative h-20 w-20">
+                  <img src="/icons/star2.png" alt="Digital Experiences" className="h-20 w-20 object-contain" />
+                </div>
+              }
+              title="Digital Experiences"
+              description="Intuitive interfaces and motion design that captivate and engage users."
+            />
+            <GridItem
+              area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
+              icon={
+                <div className="relative h-20 w-20">
+                  <img src="/icons/heart.png" alt="Innovation Labs" className="h-20 w-20 object-contain" />
+                </div>
+              }
+              title="Innovation Labs"
+              description="Cutting-edge 3D experiences and emerging technology implementations."
+            />
+          </ul>
         </motion.div>
       </div>
       <VelocityScroll className="mt-20">
         Website ● App ● SaaS ● SEO ●
       </VelocityScroll>
     </section>
+  );
+};
+
+interface GridItemProps {
+  area: string;
+  icon: React.ReactNode;
+  title: string;
+  description: React.ReactNode;
+}
+
+const GridItem = ({ area, icon, title, description }: GridItemProps) => {
+  return (
+    <li className={cn("min-h-[14rem] list-none", area)}>
+      <div className="relative h-full rounded-[1.25rem]  md:rounded-[1.5rem] md:p-3">
+        <GlowingEffect
+          spread={40}
+          glow={true}
+          disabled={false}
+          proximity={64}
+          inactiveZone={0.01}
+          borderWidth={3}
+        />
+        <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl bg-transparent p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
+          <div className="relative flex flex-1 flex-col justify-between gap-3">
+            <div className="w-fit">
+              {icon}
+            </div>
+            <div className="space-y-3">
+              <h3 className="pt-0.5 text-xl leading-[1.375rem] font-semibold font-sans tracking-[-0.04em] md:text-2xl md:leading-[1.875rem] text-balance font-light text-white">
+                {title}
+              </h3>
+              <h2 className="[&_b]:md:font-semibold [&_strong]:md:font-semibold font-sans text-sm leading-[1.125rem] md:text-base md:leading-[1.375rem] text-white/60">
+                {description}
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
   );
 };
 

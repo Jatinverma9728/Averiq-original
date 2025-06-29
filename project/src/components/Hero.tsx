@@ -3,8 +3,46 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Play, X } from "lucide-react";
 import { SparklesText } from "./magicui/sparkles-text";
 import { MorphingText } from "./magicui/morphing-text";
-import { LavaLamp } from "./magicui/fulide-blob";
+// import { RetroGrid } from "./magicui/retro-grid";
+import { InteractiveGridPattern } from "./magicui/interactive-grid-pattern";
 
+const AnimatedBackground = () => (
+  <div className="absolute inset-0 pointer-events-none z-0">
+    {/* SVG Blobs */}
+    <motion.svg
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 0.5, scale: 1 }}
+      transition={{ duration: 2 }}
+      className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw]"
+      style={{ filter: "blur(60px)" }}
+    >
+      <defs>
+        <radialGradient id="grad1" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#7dd3fc" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="transparent" />
+        </radialGradient>
+      </defs>
+      <ellipse cx="50%" cy="50%" rx="45%" ry="40%" fill="url(#grad1)" />
+    </motion.svg>
+    <motion.svg
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 0.4, scale: 1 }}
+      transition={{ duration: 2, delay: 0.5 }}
+      className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw]"
+      style={{ filter: "blur(80px)" }}
+    >
+      <defs>
+        <radialGradient id="grad2" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#a78bfa" stopOpacity="0.5" />
+          <stop offset="100%" stopColor="transparent" />
+        </radialGradient>
+      </defs>
+      <ellipse cx="50%" cy="50%" rx="40%" ry="35%" fill="url(#grad2)" />
+    </motion.svg>
+
+    <InteractiveGridPattern> </InteractiveGridPattern>
+  </div>
+);
 
 const Modal = ({ open, onClose }: { open: boolean; onClose: () => void }) => (
   <AnimatePresence>
@@ -52,19 +90,19 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Remove dark gradient background */}
-      {/* <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-black to-gray-900 z-0"></div> */}
+      {/* Animated Elegant Background */}
+      {/* Place the gradient background first */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-black to-gray-900 z-0"></div>
 
       {/* SVG Blobs and Particles */}
-      {/* <AnimatedBackground /> */}
-      {/* Blobs are now white */}
-      <LavaLamp color="white" opacity={0.95} /> {/* Pass color/opacity if supported, else update LavaLamp to use white blobs */}
+      <AnimatedBackground />
+
       {/* Subtle Glow Effects */}
       <div className="absolute inset-0 z-10">
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-white/[0.08] rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-white/[0.08] rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-white/[0.02] rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-white/[0.02] rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -86,16 +124,16 @@ const Hero = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-white mb-8 leading-[1.05] tracking-tight mix-blend-difference"
+          className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-white mb-8 leading-[1.05] tracking-tight"
         >
           <div className="flex flex-col items-center justify-center gap-2 md:flex-row md:gap-3 flex-wrap w-full">
-            <span className="block min-w-0 break-words ">We Build</span>
-            <SparklesText className="block md:inline min-w-0 break-words text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-white mx-0 md:mx-2 mix-blend-difference">
+            <span className="block min-w-0 break-words">We Build</span>
+            <SparklesText className="block md:inline min-w-0 break-words text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-white mx-0 md:mx-2">
               Digital
             </SparklesText>
             <span className="block min-w-0 break-words">That Moves</span>
           </div>
-          <span className="font-extralight text-white/60 block mt-2 text-2xl xs:text-3xl sm:text-4xl mix-blend-difference">
+          <span className="font-extralight text-white/60 block mt-2 text-2xl xs:text-3xl sm:text-4xl">
             <MorphingText texts={["Website", "App", "SaaS", "SEO", "UI/UX"]} />
           </span>
         </motion.h1>
@@ -105,7 +143,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-2xl text-white/50 mb-16 max-w-2xl mx-auto leading-relaxed font-light mix-blend-difference"
+          className="text-2xl text-white/50 mb-16 max-w-2xl mx-auto leading-relaxed font-light"
         >
           Transforming ambitious visions into sophisticated software solutions
           that define the future of business.
@@ -138,6 +176,18 @@ const Hero = () => {
           </motion.button>
         </motion.div>
 
+        {/* Elegant Scroll Indicator */}
+        {/* <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.2 }}
+          className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
+        >
+          <div className="flex flex-col items-center space-y-2">
+            <div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
+            <div className="w-1 h-1 bg-white/40 rounded-full animate-bounce"></div>
+          </div>
+        </motion.div> */}
       </div>
 
       {/* Animated Modal */}
