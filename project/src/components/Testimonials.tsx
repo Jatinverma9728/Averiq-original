@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { TestimonialsColumn } from "./ui/testimonials-columns-1";
+import { Helmet } from 'react-helmet-async';
 
 const testimonials = [
   {
@@ -72,6 +73,10 @@ const Testimonials = () => {
 
   return (
     <section className="py-20 bg-gradient-to-b from-black to-gray-950">
+      <Helmet>
+        <meta name="description" content="Read client testimonials for Averiq, a leading software agency providing web development, custom software, and all types of software-related services." />
+        <meta name="keywords" content="testimonials, software agency, software services, web development, custom software, Averiq" />
+      </Helmet>
       <div className="">
           <motion.div
             className="inline-block text-[10rem] md:text-[12rem] font-extralight text-white/[0.03]  md:mb-8 leading-none"
@@ -90,8 +95,7 @@ const Testimonials = () => {
               Client Voices
             </h2>
             <p className="text-lg md:text-xl text-white/60 max-w-3xl mx-auto font-light">
-              The trust our clients place in us drives everything we do. Here's
-              what they have to say about our partnership.
+              The trust our clients place in Averiq, a leading software agency and provider of software services, drives everything we do. Here's what they have to say about our partnership.
             </p>
           </motion.div>
 

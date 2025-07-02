@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { VelocityScroll } from "./magicui/scroll-based-velocity";
 import { GlowingEffect } from "./magicui/glowing-effect";
 import { cn } from "../lib/utils";
+import { Helmet } from 'react-helmet-async';
 
 // Using standard img tags for icons
 
@@ -27,6 +28,10 @@ const Services = () => {
       id="services"
       className="py-2 bg-gradient-to-b from-gray-950 to-black"
     >
+      <Helmet>
+        <meta name="description" content="Discover Averiq's full range of services: web development, custom software, mobile apps, enterprise systems, digital experiences, and IT solutions for businesses." />
+        <meta name="keywords" content="services, software agency, web development, custom software, IT solutions, mobile app development, enterprise systems, digital experiences, Averiq" />
+      </Helmet>
       {/* Section Number */}
       <motion.div
         // variants={itemVariants}
@@ -46,8 +51,7 @@ const Services = () => {
             Our Craft
           </h2>
           <p className="text-xl text-white/50 max-w-3xl mx-auto font-light">
-            We specialize in creating digital solutions that combine technical
-            excellence with thoughtful design and strategic thinking.
+            Averiq is a software agency specializing in web development, custom software, and IT solutions. We create digital solutions that combine technical excellence, thoughtful design, and strategic thinking to help businesses grow and succeed.
           </p>
         </motion.div>
 

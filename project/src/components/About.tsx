@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { Helmet } from 'react-helmet-async';
 
 const About = () => {
   const [ref, inView] = useInView({
@@ -42,6 +43,10 @@ const About = () => {
       id="about"
       className="py-2 bg-gradient-to-b from-black to-gray-950 relative"
     >
+      <Helmet>
+        <meta name="description" content="Learn about Averiq, a top software agency specializing in web development, custom software, and all types of software-related services for businesses worldwide." />
+        <meta name="keywords" content="about software agency, web development, software services, custom software, IT solutions, Averiq" />
+      </Helmet>
       {/* Minimal Grid Overlay */}
       <div
         className="absolute inset-0 z-0 pointer-events-none"
@@ -83,9 +88,7 @@ const About = () => {
             data-aos-delay="150"
             data-aos-duration="700"
           >
-            We are Averiq — a collective of visionaries, architects, and
-            craftspeople dedicated to creating software that transcends
-            expectations and shapes tomorrow's digital landscape.
+            We are Averiq — a leading software agency and web development company. Our team of visionaries, architects, and craftspeople is dedicated to creating custom software solutions and all types of software-related services that transcend expectations and shape tomorrow's digital landscape.
           </motion.p>
         </motion.div>
 

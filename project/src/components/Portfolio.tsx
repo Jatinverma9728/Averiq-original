@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ExternalLink, ArrowUpRight } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const Portfolio = () => {
   const [ref, inView] = useInView({
@@ -109,6 +110,10 @@ const Portfolio = () => {
       id="portfolio"
       className="py-2 bg-gradient-to-b from-black to-gray-950"
     >
+      <Helmet>
+        <meta name="description" content="Explore Averiq's portfolio of web development, custom software, SaaS, and enterprise projects. See how our software agency delivers digital excellence." />
+        <meta name="keywords" content="portfolio, software agency, web development, custom software, SaaS, enterprise projects, Averiq" />
+      </Helmet>
       {/* Section Number */}
       <motion.div
         // variants={itemVariants}
@@ -128,8 +133,7 @@ const Portfolio = () => {
             Selected Work
           </h2>
           <p className="text-xl text-white/50 max-w-3xl mx-auto mb-16 font-light">
-            A curated collection of projects that showcase our commitment to
-            excellence and innovation in digital craftsmanship.
+            As a software agency, Averiq delivers web development, custom software, SaaS, and enterprise projects. Explore our portfolio to see our commitment to excellence and innovation in digital craftsmanship.
           </p>
 
           {/* Minimal Filter Buttons */}

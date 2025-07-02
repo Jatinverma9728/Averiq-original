@@ -5,6 +5,7 @@ import { SparklesText } from "./magicui/sparkles-text";
 import { MorphingText } from "./magicui/morphing-text";
 // import { RetroGrid } from "./magicui/retro-grid";
 import { InteractiveGridPattern } from "./magicui/interactive-grid-pattern";
+import { Helmet } from 'react-helmet-async';
 
 const AnimatedBackground = () => (
   <div className="absolute inset-0 pointer-events-none z-0">
@@ -88,111 +89,122 @@ const Hero = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
-      {/* Animated Elegant Background */}
-      {/* Place the gradient background first */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-black to-gray-900 z-0"></div>
+    <>
+      <Helmet>
+        <title>Averiq - Software Agency | Web Development & Software Services</title>
+        <meta name="description" content="Averiq offers premium software solutions, web development, and all types of software-related services for businesses." />
+        <meta name="keywords" content="software agency, web development, software services, custom software, app development, IT solutions, Averiq" />
+        <meta property="og:title" content="Averiq - Software Agency | Web Development & Software Services" />
+        <meta property="og:description" content="Averiq offers premium software solutions, web development, and all types of software-related services for businesses." />
+        <meta property="og:image" content="/Averiq-Branding-kit/original-logo.png" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+      <section
+        id="home"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      >
+        {/* Animated Elegant Background */}
+        {/* Place the gradient background first */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-black to-gray-900 z-0"></div>
 
-      {/* SVG Blobs and Particles */}
-      <AnimatedBackground />
+        {/* SVG Blobs and Particles */}
+        <AnimatedBackground />
 
-      {/* Subtle Glow Effects */}
-      <div className="absolute inset-0 z-10">
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-white/[0.02] rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-white/[0.02] rounded-full blur-3xl"></div>
-      </div>
+        {/* Subtle Glow Effects */}
+        <div className="absolute inset-0 z-10">
+          <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-white/[0.02] rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-white/[0.02] rounded-full blur-3xl"></div>
+        </div>
 
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Elegant Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="inline-flex items-center space-x-2 bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-full px-4 py-2 sm:px-6 sm:py-3 mb-8 sm:mb-12"
-        >
-          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full animate-pulse"></div>
-          <span className="text-xs sm:text-sm text-white/70 font-medium tracking-wide">
-            PREMIUM SOFTWARE SOLUTIONS
-          </span>
-        </motion.div>
-
-        {/* Main Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-white mb-8 leading-[1.05] tracking-tight"
-        >
-          <div className="flex flex-col items-center justify-center gap-2 md:flex-row md:gap-3 flex-wrap w-full">
-            <span className="block min-w-0 break-words">We Build</span>
-            <SparklesText className="block md:inline min-w-0 break-words text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-white mx-0 md:mx-2">
-              Digital
-            </SparklesText>
-            <span className="block min-w-0 break-words">That Moves</span>
-          </div>
-          <span className="font-extralight text-white/60 block mt-2 text-2xl xs:text-3xl sm:text-4xl">
-            <MorphingText texts={["Website", "App", "SaaS", "SEO", "UI/UX"]} />
-          </span>
-        </motion.h1>
-
-        {/* Refined Subheading */}
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-2xl text-white/50 mb-16 max-w-2xl mx-auto leading-relaxed font-light"
-        >
-          Transforming ambitious visions into sophisticated software solutions
-          that define the future of business.
-        </motion.p>
-
-        {/* Minimal CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8"
-        >
-          <motion.button
-            className="group px-4 py-2 bg-white text-black rounded-full font-medium text-md flex items-center space-x-3 hover:bg-white/90 transition-all duration-500"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* Elegant Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="inline-flex items-center space-x-2 bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-full px-4 py-2 sm:px-6 sm:py-3 mb-8 sm:mb-12"
           >
-            <a href="#contact">Start Your Project</a>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-          </motion.button>
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full animate-pulse"></div>
+            <span className="text-xs sm:text-sm text-white/70 font-medium tracking-wide">
+              PREMIUM SOFTWARE SOLUTIONS
+            </span>
+          </motion.div>
 
-          <motion.button
-            className="group px-4 py-2 border border-white/20 text-white rounded-full font-medium text-md flex items-center space-x-3 hover:border-white/40 hover:bg-white/[0.02] transition-all duration-500"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={() => setModalOpen(true)}
+          {/* Main Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-white mb-8 leading-[1.05] tracking-tight"
           >
-            <Play className="w-5 h-5" />
-            <span>View Our Work</span>
-          </motion.button>
-        </motion.div>
+            <div className="flex flex-col items-center justify-center gap-2 md:flex-row md:gap-3 flex-wrap w-full">
+              <span className="block min-w-0 break-words">We Build</span>
+              <SparklesText className="block md:inline min-w-0 break-words text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-white mx-0 md:mx-2">
+                Digital
+              </SparklesText>
+              <span className="block min-w-0 break-words">That Moves</span>
+            </div>
+            <span className="font-extralight text-white/60 block mt-2 text-2xl xs:text-3xl sm:text-4xl">
+              <MorphingText texts={["Website", "App", "SaaS", "SEO", "UI/UX"]} />
+            </span>
+          </motion.h1>
 
-        {/* Elegant Scroll Indicator */}
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
-        >
-          <div className="flex flex-col items-center space-y-2">
-            <div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
-            <div className="w-1 h-1 bg-white/40 rounded-full animate-bounce"></div>
-          </div>
-        </motion.div> */}
-      </div>
+          {/* Refined Subheading */}
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-2xl text-white/50 mb-16 max-w-2xl mx-auto leading-relaxed font-light"
+          >
+            Transforming ambitious visions into sophisticated software solutions
+            that define the future of business.
+          </motion.p>
 
-      {/* Animated Modal */}
-      <Modal open={modalOpen} onClose={() => setModalOpen(false)} />
-    </section>
+          {/* Minimal CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8"
+          >
+            <motion.button
+              className="group px-4 py-2 bg-white text-black rounded-full font-medium text-md flex items-center space-x-3 hover:bg-white/90 transition-all duration-500"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <a href="#contact">Start Your Project</a>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+            </motion.button>
+
+            <motion.button
+              className="group px-4 py-2 border border-white/20 text-white rounded-full font-medium text-md flex items-center space-x-3 hover:border-white/40 hover:bg-white/[0.02] transition-all duration-500"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => setModalOpen(true)}
+            >
+              <Play className="w-5 h-5" />
+              <span>View Our Work</span>
+            </motion.button>
+          </motion.div>
+
+          {/* Elegant Scroll Indicator */}
+          {/* <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.2 }}
+            className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
+          >
+            <div className="flex flex-col items-center space-y-2">
+              <div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
+              <div className="w-1 h-1 bg-white/40 rounded-full animate-bounce"></div>
+            </div>
+          </motion.div> */}
+        </div>
+
+        {/* Animated Modal */}
+        <Modal open={modalOpen} onClose={() => setModalOpen(false)} />
+      </section>
+    </>
   );
 };
 
